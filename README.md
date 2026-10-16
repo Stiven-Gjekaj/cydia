@@ -1,8 +1,9 @@
 # Cydia repository of Stiven Gjekaj
 
-Apps for old iPhones on a jailbreak. The first one is
+Apps for old iPhones on a jailbreak:
 [RetroTube](https://github.com/Stiven-Gjekaj/RetroTube), a YouTube client for
-iOS 6.
+iOS 6, and [ZettaLite](https://github.com/Stiven-Gjekaj/ZettaLite), a player
+for Stremio addons, IPTV, and media links on iOS 6.
 
 ## Add the repository
 
@@ -34,6 +35,7 @@ deb https://stiven-gjekaj.github.io/cydia/ ./
 | Package | Version | For |
 | ------- | ------- | --- |
 | RetroTube (`io.github.stivengjekaj.retrotube`) | 1.0.1 | iOS 6 or newer |
+| ZettaLite (`io.github.stivengjekaj.zettalite`) | 0.1.0 | iOS 6 or newer |
 
 ## Add a package
 
