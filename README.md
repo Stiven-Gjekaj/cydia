@@ -6,6 +6,14 @@ iOS 6.
 
 ## Add the repository
 
+> [!IMPORTANT]
+> **Cydia on iOS 6 cannot read this repository.** GitHub Pages accepts only
+> TLS 1.2, and the APT of iOS 6 Cydia stops at TLS 1.0 (SSL error -9836).
+> GitHub also does not serve plain HTTP on `github.io`. On iOS 6, download
+> the `.deb` from the release of the app and install it with `dpkg -i`.
+> The repository works with iOS 7 and later, and with an APT that has
+> TLS 1.2.
+
 1. Open Cydia.
 2. Tap Sources, then Edit, then Add.
 3. Type `https://stiven-gjekaj.github.io/cydia/` and tap Add Source.
