@@ -1,0 +1,16 @@
+Origin: Stiven Gjekaj
+Label: Stiven Gjekaj
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm
+Components: main
+Description: Apps for old iPhones, by Stiven Gjekaj.
+MD5Sum:
+ e5e4f80ebfd03d1897c589ff61a6b1f9 683 Packages
+ 27dea50d64b3fb5c622828a9122f9175 503 Packages.bz2
+ da1d500305156d13c21f3bc598befcee 445 Packages.gz
+SHA256:
+ 090052561611cfcf6f96ef33ab726b53508c3af4656419013dd482fec2dccaaf 683 Packages
+ 130c0ebd0edcd01b3ea676e5c2b74b4afb7288cba2b6c519c10359e17d4e80bc 503 Packages.bz2
+ 6d794d27211277dc42c3ed68f27a6db4e71c67ddd324950fc7e9c1836fbd2779 445 Packages.gz
