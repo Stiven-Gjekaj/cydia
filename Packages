@@ -32,3 +32,20 @@ Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
 Icon: file:///Applications/RetroTube.app/Icon@2x.png
 Name: RetroTube
 
+Package: io.github.stivengjekaj.zettalite
+Version: 0.1.0
+Architecture: iphoneos-arm
+Maintainer: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Depends: firmware (>= 6.0)
+Filename: debs/io.github.stivengjekaj.zettalite_0.1.0_iphoneos-arm.deb
+Size: 8061992
+MD5sum: 28a0c0861a3ac850096839aab9227598
+SHA1: d5510097092c965937c91e54fbfc0f6fe765509f
+SHA256: 5e544bacbb35af06686ad0c12c97866ee7ca4ae2f0d1adfc98bdd7a5c8cb98a6
+Section: Multimedia
+Homepage: https://github.com/Stiven-Gjekaj/ZettaLite
+Description: Stremio addons, IPTV, and media links for iOS 6, with FFmpeg on the phone.
+Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Icon: file:///Applications/ZettaLite.app/Icon@2x.png
+Name: ZettaLite
+
