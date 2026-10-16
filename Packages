@@ -66,3 +66,20 @@ Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
 Icon: file:///Applications/ZettaLite.app/Icon@2x.png
 Name: ZettaLite
 
+Package: io.github.stivengjekaj.zettalite
+Version: 0.3.0
+Architecture: iphoneos-arm
+Maintainer: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Depends: firmware (>= 6.0)
+Filename: debs/io.github.stivengjekaj.zettalite_0.3.0_iphoneos-arm.deb
+Size: 8608160
+MD5sum: 6526539c1ee254d3c585aff173b1f5e1
+SHA1: 8847ac036bc58c0a350c8d6b97e7d246b3815e2e
+SHA256: 94b3966cac6064eb38204fe2ca35bab868c637e85c12d17672b581822edc11fe
+Section: Multimedia
+Homepage: https://github.com/Stiven-Gjekaj/ZettaLite
+Description: Stremio addons, IPTV, and media links for iOS 6, with FFmpeg on the phone.
+Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Icon: file:///Applications/ZettaLite.app/Icon@2x.png
+Name: ZettaLite
+
