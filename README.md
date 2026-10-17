@@ -2,8 +2,10 @@
 
 Apps for old iPhones on a jailbreak:
 [RetroTube](https://github.com/Stiven-Gjekaj/RetroTube), a YouTube client for
-iOS 6, and [ZettaLite](https://github.com/Stiven-Gjekaj/ZettaLite), a player
-for Stremio addons, IPTV, and media links on iOS 6.
+iOS 6, [ZettaLite](https://github.com/Stiven-Gjekaj/ZettaLite), a player
+for Stremio addons, IPTV, and media links on iOS 6, and
+[Groovelet](https://github.com/Stiven-Gjekaj/Groovelet), a music player for
+iOS 6.
 
 ## Add the repository
 
@@ -36,6 +38,7 @@ deb https://stiven-gjekaj.github.io/cydia/ ./
 | ------- | ------- | --- |
 | RetroTube (`io.github.stivengjekaj.retrotube`) | 1.0.1 | iOS 6 or newer |
 | ZettaLite (`io.github.stivengjekaj.zettalite`) | 1.0.1 | iOS 6 or newer |
+| Groovelet (`io.github.stivengjekaj.groovelet`) | 1.0.0 | iOS 6 or newer |
 
 ## Add a package
 
