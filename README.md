@@ -36,7 +36,7 @@ deb https://stiven-gjekaj.github.io/cydia/ ./
 
 | Package | Version | For |
 | ------- | ------- | --- |
-| RetroTube (`io.github.stivengjekaj.retrotube`) | 1.0.1 | iOS 6 or newer |
+| RetroTube (`io.github.stivengjekaj.retrotube`) | 1.1.0 | iOS 6 or newer |
 | ZettaLite (`io.github.stivengjekaj.zettalite`) | 1.0.1 | iOS 6 or newer |
 | Groovelet (`io.github.stivengjekaj.groovelet`) | 1.0.0 | iOS 6 or newer |
 
