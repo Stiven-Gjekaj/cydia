@@ -7,10 +7,10 @@ Architectures: iphoneos-arm
 Components: main
 Description: Apps for old iPhones, by Stiven Gjekaj.
 MD5Sum:
- 01979a0d4e14f9765eeec4594504c485 4866 Packages
- fef4ad036b0e0371e5e58ca84f67dfb5 1382 Packages.bz2
- 7edb1a64428c0c453dd4904df87c2fe6 1181 Packages.gz
+ ea6ede83ee6934ada44ec3d63d1b12ee 5566 Packages
+ bc4bda603e15dd9e9a5f873967688555 1448 Packages.bz2
+ 97288a9b91ce5550fd3733cc128fa37e 1285 Packages.gz
 SHA256:
- 614adf44c44d9497fffff84fd1cd494ac9fe322ac3d09ef791e698d8626a674a 4866 Packages
- 071dcb39dc9ea14d3db930da89af40aab7ac32600c7e27532317793102110c25 1382 Packages.bz2
- fdc15222c972591bec605b0d131ec44922c8f89dfb2010716076adc813c40d67 1181 Packages.gz
+ af1be2fa1dfdb726514ae483175970cc68fdc7b146c1bfdcee60e6fed423c925 5566 Packages
+ 35e3e0bd7d9d5c262e1c4a2e69865427e3e7e02d2423b193769f819f73920ae7 1448 Packages.bz2
+ 636653760c2fb06f2c783d8c0bf633ea198f773c064ab8ca0f183f3b642a2a6c 1285 Packages.gz
