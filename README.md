@@ -3,7 +3,7 @@
 Apps for old iPhones on a jailbreak:
 [RetroTube](https://github.com/Stiven-Gjekaj/RetroTube), a YouTube client for
 iOS 6, [ZettaLite](https://github.com/Stiven-Gjekaj/ZettaLite), a player
-for Stremio addons, IPTV, and media links on iOS 6, and
+for Stremio addons, IPTV, and media links on iOS 6,
 [Groovelet](https://github.com/Stiven-Gjekaj/Groovelet), a music player for
 iOS 6, and [Balatro4S](https://github.com/Stiven-Gjekaj/Balatro4S), a demake
 of Balatro for iOS 6.
