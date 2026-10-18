@@ -134,6 +134,23 @@ Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
 Icon: file:///Applications/Balatro4S.app/Icon@2x.png
 Name: Balatro4S
 
+Package: io.github.stivengjekaj.balatro4s
+Version: 0.9.0
+Architecture: iphoneos-arm
+Maintainer: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Depends: firmware (>= 6.0)
+Filename: debs/io.github.stivengjekaj.balatro4s_0.9.0_iphoneos-arm.deb
+Size: 193024
+MD5sum: 9bae61d21ea3d541472bf2cede602f27
+SHA1: ecb31db8f756699db07c87cf14d8a1c76799aa09
+SHA256: 78f80f25941d3b40f4669ba01c186bbc60b81f111251b1b15790738a00d1fa8a
+Section: Games
+Homepage: https://github.com/Stiven-Gjekaj/Balatro4S
+Description: A demake of Balatro for iOS 6. It needs the Balatro.love file of your own copy of Balatro.
+Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Icon: file:///Applications/Balatro4S.app/Icon@2x.png
+Name: Balatro4S
+
 Package: io.github.stivengjekaj.groovelet
 Version: 1.0.0
 Architecture: iphoneos-arm
