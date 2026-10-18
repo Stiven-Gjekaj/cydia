@@ -42,7 +42,7 @@ deb https://stiven-gjekaj.github.io/cydia/ ./
 | ZettaLite (`io.github.stivengjekaj.zettalite`) | 1.1.0 | iOS 6 or newer |
 | Groovelet (`io.github.stivengjekaj.groovelet`) | 1.0.2 | iOS 6 or newer |
 | Balatro4S (`io.github.stivengjekaj.balatro4s`) | 0.10.0 | iOS 6 or newer |
-| FortOS (`io.github.stivengjekaj.fortos`) | 0.5.0 | iOS 6 or newer |
+| FortOS (`io.github.stivengjekaj.fortos`) | 0.6.0 | iOS 6 or newer |
 
 ## Add a package
 
