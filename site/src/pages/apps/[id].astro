@@ -1,0 +1,118 @@
+---
+import type { GetStaticPaths } from "astro";
+import CopyField from "../../components/CopyField.astro";
+import Ios6Note from "../../components/Ios6Note.astro";
+import PackageIcon from "../../components/PackageIcon.astro";
+import Layout from "../../layouts/Layout.astro";
+import { formatSize, type Package } from "../../lib/packages";
+import { ADD_URL, loadPackages } from "../../lib/repo";
+import { url } from "../../lib/url";
+
+export const getStaticPaths = (() =>
+  loadPackages().map((pkg) => ({ params: { id: pkg.id }, props: { pkg } }))) satisfies GetStaticPaths;
+
+const { pkg } = Astro.props as { pkg: Package };
+const newest = pkg.versions[0];
+const debName = newest.filename.split("/").pop();
+---
+
+<Layout title={`${pkg.name} - Stiven Gjekaj Cydia Repository`} description={pkg.description}>
+  <div class="breadcrumbs pt-6 text-sm">
+    <ul>
+      <li><a href={url()}>Home</a></li>
+      <li><a href={url("#packages")}>Packages</a></li>
+      <li>{pkg.name}</li>
+    </ul>
+  </div>
+
+  <section class="mt-4 flex flex-col gap-6 sm:flex-row sm:items-center">
+    <PackageIcon pkg={pkg} size={112} />
+    <div class="min-w-0 flex-1">
+      <h1 class="text-4xl font-extrabold tracking-tight">{pkg.name}</h1>
+      <p class="mt-1 font-mono text-sm break-all text-base-content/60">{pkg.id}</p>
+      <div class="mt-2 flex flex-wrap gap-1">
+        {pkg.section && <span class="badge badge-soft badge-secondary">{pkg.section}</span>}
+        {pkg.minIOS && <span class="badge badge-soft badge-accent">iOS {pkg.minIOS} or later</span>}
+        {pkg.author && <span class="badge badge-ghost">By {pkg.author}</span>}
+      </div>
+    </div>
+    <div class="flex flex-col gap-2 sm:w-56">
+      <a href={url(newest.filename)} class="btn btn-primary" download>Download {newest.version}</a>
+      {pkg.homepage && <a href={pkg.homepage} class="btn btn-outline">Source code</a>}
+    </div>
+  </section>
+
+  <p class="mt-6 max-w-2xl text-lg text-base-content/80">{pkg.description}</p>
+
+  <div class="stats stats-vertical mt-6 w-full border border-base-300 bg-base-100 shadow-sm sm:stats-horizontal">
+    <div class="stat">
+      <div class="stat-title">Latest version</div>
+      <div class="stat-value text-3xl">{newest.version}</div>
+    </div>
+    <div class="stat">
+      <div class="stat-title">Size</div>
+      <div class="stat-value text-3xl">{formatSize(newest.size)}</div>
+    </div>
+    <div class="stat">
+      <div class="stat-title">Versions</div>
+      <div class="stat-value text-3xl">{pkg.versions.length}</div>
+    </div>
+  </div>
+
+  <section class="mt-10 grid gap-4 lg:grid-cols-2">
+    <div class="card min-w-0 border border-base-300 bg-base-100">
+      <div class="card-body">
+        <h2 class="card-title">Install with Cydia</h2>
+        <p class="text-sm text-base-content/70">Add the source, then search for {pkg.name}. This works on iOS 7 and later.</p>
+        <a href={ADD_URL} class="btn btn-primary btn-sm w-fit">Add to Cydia</a>
+        <p class="mt-2 text-sm text-base-content/70">Or install it with APT:</p>
+        <CopyField text={`apt-get install ${pkg.id}`} label="APT command" />
+      </div>
+    </div>
+    <div class="card min-w-0 border border-base-300 bg-base-100">
+      <div class="card-body">
+        <h2 class="card-title">Install on iOS 6</h2>
+        <Ios6Note />
+        <div class="mockup-code min-w-0 overflow-x-auto text-sm">
+          <pre data-prefix="#"><code>dpkg -i {debName}</code></pre>
+          <pre data-prefix="#"><code>su mobile -c uicache</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-10">
+    <h2 class="mb-4 text-2xl font-bold">All versions</h2>
+    <div class="overflow-x-auto rounded-box border border-base-300 bg-base-100">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Size</th>
+            <th class="hidden md:table-cell">SHA-256</th>
+            <th><span class="sr-only">Download</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            pkg.versions.map((v, i) => (
+              <tr>
+                <td class="font-semibold">
+                  {v.version}
+                  {i === 0 && <span class="badge badge-sm badge-primary ml-2">Latest</span>}
+                </td>
+                <td>{formatSize(v.size)}</td>
+                <td class="hidden max-w-xs truncate font-mono text-xs text-base-content/60 md:table-cell" title={v.sha256}>
+                  {v.sha256}
+                </td>
+                <td class="text-right">
+                  <a href={url(v.filename)} class="btn btn-ghost btn-sm" download>Download</a>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+</Layout>
