@@ -1,0 +1,86 @@
+---
+import CopyField from "../components/CopyField.astro";
+import Ios6Note from "../components/Ios6Note.astro";
+import PackageCard from "../components/PackageCard.astro";
+import Layout from "../layouts/Layout.astro";
+import { ADD_URL, SOURCE_URL, loadPackages } from "../lib/repo";
+import { url } from "../lib/url";
+
+const packages = loadPackages();
+const versionCount = packages.reduce((n, p) => n + p.versions.length, 0);
+---
+
+<Layout title="Stiven Gjekaj Cydia Repository">
+  <section class="hero py-12 sm:py-16">
+    <div class="hero-content flex-col text-center">
+      <img src={url("CydiaIcon.png")} width="88" height="88" alt="" class="rounded-[22%] shadow-lg" />
+      <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">Apps for old iPhones</h1>
+      <p class="max-w-xl text-lg text-base-content/75">
+        Native apps and demakes for jailbroken iOS 6 and later. They need no account and no server.
+      </p>
+      <div class="stats stats-horizontal mt-2 border border-base-300 bg-base-100 shadow-sm">
+        <div class="stat px-5 py-3">
+          <div class="stat-title">Apps</div>
+          <div class="stat-value text-2xl">{packages.length}</div>
+        </div>
+        <div class="stat px-5 py-3">
+          <div class="stat-title">Versions</div>
+          <div class="stat-value text-2xl">{versionCount}</div>
+        </div>
+        <div class="stat px-5 py-3">
+          <div class="stat-title">Needs</div>
+          <div class="stat-value text-2xl">iOS 6</div>
+        </div>
+      </div>
+      <div class="mt-4 flex flex-wrap justify-center gap-2">
+        <a href={ADD_URL} class="btn btn-primary btn-lg">Add to Cydia</a>
+        <a href="#packages" class="btn btn-outline btn-lg">See the apps</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages" class="scroll-mt-20">
+    <h2 class="mb-4 text-2xl font-bold">Packages</h2>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {packages.map((pkg) => <PackageCard pkg={pkg} />)}
+    </div>
+  </section>
+
+  <section id="install" class="mt-16 scroll-mt-20">
+    <h2 class="mb-4 text-2xl font-bold">Install</h2>
+    <div class="grid gap-4 lg:grid-cols-2">
+      <div class="card min-w-0 border border-base-300 bg-base-100">
+        <div class="card-body">
+          <h3 class="card-title">iOS 7 and later</h3>
+          <ul class="steps steps-vertical">
+            <li class="step step-primary"><span class="text-left">Open Cydia, Sileo, or Zebra.</span></li>
+            <li class="step step-primary"><span class="text-left">Tap Sources, then Edit, then Add.</span></li>
+            <li class="step step-primary"><span class="text-left">Type the source below and tap Add Source.</span></li>
+          </ul>
+          <CopyField text={SOURCE_URL} label="Source URL" />
+          <p class="mt-2 text-sm text-base-content/70">
+            With APT, put this line in a file in <code>/etc/apt/sources.list.d/</code>:
+          </p>
+          <div class="mockup-code min-w-0 overflow-x-auto text-sm">
+            <pre data-prefix="$"><code>echo "deb {SOURCE_URL} ./" &gt; cydia.list</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="card min-w-0 border border-base-300 bg-base-100">
+        <div class="card-body">
+          <h3 class="card-title">iOS 6</h3>
+          <Ios6Note />
+          <ul class="steps steps-vertical">
+            <li class="step step-secondary"><span class="text-left">Download the <code>.deb</code> of the app.</span></li>
+            <li class="step step-secondary"><span class="text-left">Copy it to the phone, for example with SSH.</span></li>
+            <li class="step step-secondary"><span class="text-left">Install it as root, then respring.</span></li>
+          </ul>
+          <div class="mockup-code min-w-0 overflow-x-auto text-sm">
+            <pre data-prefix="#"><code>dpkg -i app.deb</code></pre>
+            <pre data-prefix="#"><code>su mobile -c uicache</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

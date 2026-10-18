@@ -1,0 +1,39 @@
+---
+import type { Package } from "../lib/packages";
+import { formatSize } from "../lib/packages";
+import { url } from "../lib/url";
+import PackageIcon from "./PackageIcon.astro";
+
+interface Props {
+  pkg: Package;
+}
+
+const { pkg } = Astro.props;
+const newest = pkg.versions[0];
+---
+
+<article class="card border border-base-300 bg-base-100 shadow-sm transition hover:shadow-md">
+  <div class="card-body gap-4">
+    <div class="flex items-center gap-4">
+      <PackageIcon pkg={pkg} size={64} />
+      <div class="min-w-0">
+        <h3 class="card-title text-xl">
+          <a href={url(`apps/${pkg.id}/`)} class="link-hover">{pkg.name}</a>
+        </h3>
+        <div class="mt-1 flex flex-wrap gap-1">
+          {pkg.section && <span class="badge badge-sm badge-soft badge-secondary">{pkg.section}</span>}
+          {pkg.minIOS && <span class="badge badge-sm badge-soft badge-accent">iOS {pkg.minIOS}+</span>}
+        </div>
+      </div>
+    </div>
+    <p class="text-base-content/80">{pkg.description}</p>
+    <div class="flex items-center justify-between text-sm text-base-content/70">
+      <span>Version <strong class="text-base-content">{newest.version}</strong></span>
+      <span>{formatSize(newest.size)}</span>
+    </div>
+    <div class="card-actions grid grid-cols-2">
+      <a href={url(newest.filename)} class="btn btn-primary" download>Download</a>
+      <a href={url(`apps/${pkg.id}/`)} class="btn btn-outline">Details</a>
+    </div>
+  </div>
+</article>
