@@ -43,6 +43,7 @@ deb https://stiven-gjekaj.github.io/cydia/ ./
 | Groovelet (`io.github.stivengjekaj.groovelet`) | 1.0.2 | iOS 6 or newer |
 | Balatro4S (`io.github.stivengjekaj.balatro4s`) | 0.10.1 | iOS 6 or newer |
 | FortOS (`io.github.stivengjekaj.fortos`) | 0.9.0 | iOS 6 or newer |
+| Alpharune (`io.github.stivengjekaj.alpharune`) | 0.6.0 | iOS 6 or newer |
 
 ## Add a package
 
