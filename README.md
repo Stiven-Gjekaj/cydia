@@ -40,7 +40,7 @@ deb https://stiven-gjekaj.github.io/cydia/ ./
 | RetroTube (`io.github.stivengjekaj.retrotube`) | 1.2.0 | iOS 6 or newer |
 | ZettaLite (`io.github.stivengjekaj.zettalite`) | 1.1.0 | iOS 6 or newer |
 | Groovelet (`io.github.stivengjekaj.groovelet`) | 1.0.2 | iOS 6 or newer |
-| Balatro4S (`io.github.stivengjekaj.balatro4s`) | 0.9.0 | iOS 6 or newer |
+| Balatro4S (`io.github.stivengjekaj.balatro4s`) | 0.10.0 | iOS 6 or newer |
 
 ## Add a package
 
