@@ -51,11 +51,30 @@ scripts/update.sh path/to/package.deb
 ```
 
 The script copies the package into `debs/` and makes `Packages`,
-`Packages.bz2`, `Packages.gz`, and `Release` again. Then it runs
-`scripts/page.py`, which makes `index.html` and `icons/` from `Packages`.
-Do not edit `index.html`. Change `scripts/page.py` and run it. Commit the result and
-push it. GitHub Pages serves the `main` branch.
+`Packages.bz2`, `Packages.gz`, and `Release` again. Commit the result and
+push it.
 
 The repository keeps each version of a package in `debs/`.
 The `Release` file has no signature. Cydia accepts a repository with no
 signature.
+
+## The website
+
+The website is in `site/`. It uses Astro, Tailwind CSS, and daisyUI.
+It reads `Packages` and the `.deb` files when it builds, so you do not
+edit it when you add a package.
+
+The workflow in `.github/workflows/pages.yml` runs on each push to `main`.
+It tests and builds the site, and adds `debs/`, `Packages`, and `Release`.
+Then it publishes the result to GitHub Pages.
+In the settings of the repository, set the source of Pages to GitHub Actions.
+
+To see the site on your computer:
+
+```
+cd site
+npm install
+npm run dev
+```
+
+The build needs `dpkg-deb` to read the icons.
