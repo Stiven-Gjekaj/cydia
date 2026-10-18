@@ -1,0 +1,83 @@
+---
+import "../styles/global.css";
+import { GITHUB_URL } from "../lib/repo";
+import { url } from "../lib/url";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Apps for old iPhones on a jailbreak, by Stiven Gjekaj." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" href={url("CydiaIcon.png")} />
+    <link rel="apple-touch-icon" href={url("CydiaIcon.png")} />
+    <script is:inline>
+      // Use the theme that the reader chose before. Do this before the page shows.
+      try {
+        const theme = localStorage.getItem("theme");
+        if (theme) document.documentElement.setAttribute("data-theme", theme);
+      } catch {}
+    </script>
+  </head>
+  <body class="min-h-screen bg-base-200 text-base-content">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:p-2">Skip to the content</a>
+    <header class="navbar sticky top-0 z-10 border-b border-base-300 bg-base-100/90 backdrop-blur">
+      <div class="mx-auto flex w-full max-w-5xl items-center gap-2 px-2">
+        <a href={url()} class="btn btn-ghost gap-2 px-2 text-lg font-bold">
+          <img src={url("CydiaIcon.png")} width="28" height="28" alt="" class="rounded-md" />
+          Stiven Gjekaj
+        </a>
+        <nav class="ml-auto flex items-center gap-1">
+          <a href={url("#packages")} class="btn btn-ghost btn-sm hidden sm:inline-flex">Packages</a>
+          <a href={url("#install")} class="btn btn-ghost btn-sm hidden sm:inline-flex">Install</a>
+          <a href={GITHUB_URL} class="btn btn-ghost btn-sm">GitHub</a>
+          <button id="theme" type="button" class="btn btn-ghost btn-sm btn-square" aria-label="Change the color theme">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="mx-auto max-w-5xl px-4 pb-16">
+      <slot />
+    </main>
+
+    <footer class="footer footer-center border-t border-base-300 bg-base-100 p-8 text-sm text-base-content/70">
+      <p>Each version of each package stays in the repository.</p>
+      <p>
+        <a class="link" href={GITHUB_URL}>Source of this repository</a>
+        &middot;
+        <a class="link" href={url("Packages")}>Packages</a>
+        &middot;
+        <a class="link" href={url("Release")}>Release</a>
+      </p>
+    </footer>
+
+    <script is:inline>
+      document.getElementById("theme").addEventListener("click", () => {
+        const root = document.documentElement;
+        const current =
+          root.getAttribute("data-theme") ||
+          (matchMedia("(prefers-color-scheme: dark)").matches ? "leather" : "parchment");
+        const next = current === "leather" ? "parchment" : "leather";
+        root.setAttribute("data-theme", next);
+        try {
+          localStorage.setItem("theme", next);
+        } catch {}
+      });
+    </script>
+  </body>
+</html>
