@@ -46,6 +46,7 @@ deb https://stiven-gjekaj.github.io/cydia/ ./
 | Balatro4S (`io.github.stivengjekaj.balatro4s`) | 1.0.0 | iOS 6 or newer |
 | FortOS (`io.github.stivengjekaj.fortos`) | 1.0.0 | iOS 6 or newer |
 | Alpharune (`io.github.stivengjekaj.alpharune`) | 0.6.0 | iOS 6 or newer |
+| RecTunnelX (`io.github.stivengjekaj.rectunnelx`) | 0.1.0 | iOS 6 or newer |
 
 ## Add a package
 
