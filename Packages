@@ -253,6 +253,23 @@ Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
 Icon: file:///Applications/FortOS.app/Icon@2x.png
 Name: FortOS
 
+Package: io.github.stivengjekaj.fortos
+Version: 0.6.0
+Architecture: iphoneos-arm
+Maintainer: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Depends: firmware (>= 6.0)
+Filename: debs/io.github.stivengjekaj.fortos_0.6.0_iphoneos-arm.deb
+Size: 220260
+MD5sum: e0574028d5e9c46d009f0ff56197e950
+SHA1: dc6109909d32cce8f1629adb7c9b260b803a2dc5
+SHA256: f33577b89f29fb6c0deaaeb376055d8ee1d292af9b3d5e4084b27990b14954a2
+Section: Games
+Homepage: https://github.com/Stiven-Gjekaj/FortOS
+Description: A demake of GANGFORT for iOS 6. It needs the APK of your own copy of GANGFORT 2.1.
+Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Icon: file:///Applications/FortOS.app/Icon@2x.png
+Name: FortOS
+
 Package: io.github.stivengjekaj.groovelet
 Version: 1.0.0
 Architecture: iphoneos-arm
