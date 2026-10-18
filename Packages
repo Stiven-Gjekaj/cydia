@@ -1,3 +1,20 @@
+Package: io.github.stivengjekaj.alpharune
+Version: 0.6.0
+Architecture: iphoneos-arm
+Maintainer: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Depends: firmware (>= 6.0)
+Filename: debs/io.github.stivengjekaj.alpharune_0.6.0_iphoneos-arm.deb
+Size: 161226
+MD5sum: b1254b5e801b6239b71abaebb7b592de
+SHA1: ae369bbd7144bf328290135dfc883b3238e839d5
+SHA256: f1e7625ec95e3b36efb7051decdfd59a87fd183c6983eea9cf28fab6420d8a6b
+Section: Games
+Homepage: https://github.com/Stiven-Gjekaj/Alpharune
+Description: A demake of DELTARUNE for iOS 6. It needs the files of your own copy of DELTARUNE.
+Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Icon: file:///Applications/Alpharune.app/Icon@2x.png
+Name: Alpharune
+
 Package: io.github.stivengjekaj.balatro4s
 Version: 0.1.0
 Architecture: iphoneos-arm
@@ -185,6 +202,23 @@ Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
 Icon: file:///Applications/Balatro4S.app/Icon@2x.png
 Name: Balatro4S
 
+Package: io.github.stivengjekaj.balatro4s
+Version: 1.0.0
+Architecture: iphoneos-arm
+Maintainer: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Depends: firmware (>= 6.0)
+Filename: debs/io.github.stivengjekaj.balatro4s_1.0.0_iphoneos-arm.deb
+Size: 230218
+MD5sum: 1127d2b75771c581a8fbea575806dea9
+SHA1: 593a1de37e72f8d221f1502772fa42d71d0638a8
+SHA256: f9aedb9aa4fe70253c9f92475323b920683a139ae3596692fc1feb16026080c0
+Section: Games
+Homepage: https://github.com/Stiven-Gjekaj/Balatro4S
+Description: A demake of Balatro for iOS 6. It needs the Balatro.love file of your own copy of Balatro.
+Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Icon: file:///Applications/Balatro4S.app/Icon@2x.png
+Name: Balatro4S
+
 Package: io.github.stivengjekaj.fortos
 Version: 0.1.0
 Architecture: iphoneos-arm
@@ -297,6 +331,57 @@ Size: 262376
 MD5sum: 51f8600d3e3d8f4ac916130b4f6d2e64
 SHA1: 53e414b6b32766d3f56bae26a20ff885a9512cae
 SHA256: 31c5ed5a8b5f1a3ee6475e54090c6e1c09fbec1e336cf7ccb5bd44ba71e9d557
+Section: Games
+Homepage: https://github.com/Stiven-Gjekaj/FortOS
+Description: A demake of GANGFORT for iOS 6. It needs the APK of your own copy of GANGFORT 2.1.
+Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Icon: file:///Applications/FortOS.app/Icon@2x.png
+Name: FortOS
+
+Package: io.github.stivengjekaj.fortos
+Version: 0.8.0
+Architecture: iphoneos-arm
+Maintainer: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Depends: firmware (>= 6.0)
+Filename: debs/io.github.stivengjekaj.fortos_0.8.0_iphoneos-arm.deb
+Size: 286538
+MD5sum: 511c9e64d7b0fa6f68bd331170e5fb42
+SHA1: fff544ab67f902a5fc14e5fb0b5c25259bc25f86
+SHA256: 1d7f68b00d241368747b736381760db87f3f8db9804cd8f43feca5f52999b0b8
+Section: Games
+Homepage: https://github.com/Stiven-Gjekaj/FortOS
+Description: A demake of GANGFORT for iOS 6. It needs the APK of your own copy of GANGFORT 2.1.
+Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Icon: file:///Applications/FortOS.app/Icon@2x.png
+Name: FortOS
+
+Package: io.github.stivengjekaj.fortos
+Version: 0.9.0
+Architecture: iphoneos-arm
+Maintainer: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Depends: firmware (>= 6.0)
+Filename: debs/io.github.stivengjekaj.fortos_0.9.0_iphoneos-arm.deb
+Size: 287470
+MD5sum: 2a2ce3fe5ad68fdeb4f30ef2d5b2c1a3
+SHA1: 15c744f7aca9f7d29352d1ded6832f0064f07aa0
+SHA256: 6ce8ec3af87f6baf02273b00682e936b1827740bfc815292b1eee31176ce3595
+Section: Games
+Homepage: https://github.com/Stiven-Gjekaj/FortOS
+Description: A demake of GANGFORT for iOS 6. It needs the APK of your own copy of GANGFORT 2.1.
+Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Icon: file:///Applications/FortOS.app/Icon@2x.png
+Name: FortOS
+
+Package: io.github.stivengjekaj.fortos
+Version: 1.0.0
+Architecture: iphoneos-arm
+Maintainer: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Depends: firmware (>= 6.0)
+Filename: debs/io.github.stivengjekaj.fortos_1.0.0_iphoneos-arm.deb
+Size: 287946
+MD5sum: f32c807b9ee6b4af2a89931bc6f9948e
+SHA1: 0f066bd5adc433c839637782318e8a2a9b71f4d1
+SHA256: e021726c35ef6aa862f2b238aff65ffe3a7a7218f1164f615ec4b045364992aa
 Section: Games
 Homepage: https://github.com/Stiven-Gjekaj/FortOS
 Description: A demake of GANGFORT for iOS 6. It needs the APK of your own copy of GANGFORT 2.1.
