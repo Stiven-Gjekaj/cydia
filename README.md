@@ -51,7 +51,9 @@ scripts/update.sh path/to/package.deb
 ```
 
 The script copies the package into `debs/` and makes `Packages`,
-`Packages.bz2`, `Packages.gz`, and `Release` again. Commit the result and
+`Packages.bz2`, `Packages.gz`, and `Release` again. Then it runs
+`scripts/page.py`, which makes `index.html` and `icons/` from `Packages`.
+Do not edit `index.html`. Change `scripts/page.py` and run it. Commit the result and
 push it. GitHub Pages serves the `main` branch.
 
 The repository keeps each version of a package in `debs/`.
