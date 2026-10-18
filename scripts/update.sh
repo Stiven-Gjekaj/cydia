@@ -35,5 +35,4 @@ gzip -kf9n Packages
     done
 } > Release
 
-scripts/page.py
 grep -c '^Package:' Packages | sed 's/$/ packages/'
