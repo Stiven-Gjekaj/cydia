@@ -440,6 +440,23 @@ Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
 Icon: file:///Applications/Groovelet.app/Icon@2x.png
 Name: Groovelet
 
+Package: io.github.stivengjekaj.rectunnelx
+Version: 0.1.0
+Architecture: iphoneos-arm
+Maintainer: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Depends: firmware (>= 6.0)
+Filename: debs/io.github.stivengjekaj.rectunnelx_0.1.0_iphoneos-arm.deb
+Size: 68584
+MD5sum: 88141c0950b6bfdc5f7855ee904ac63e
+SHA1: 6e867d01244d5970b2e5a08a2df3dc997cc69b1d
+SHA256: 4ea86fd6bc6abf793602cd44bb446f61cee56fe65786aced1a68758653a83573
+Section: Utilities
+Homepage: https://github.com/Stiven-Gjekaj/RecTunnelX
+Description: Stream the screen of the phone to OBS over USB or Wi-Fi.
+Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Icon: file:///Applications/RecTunnelX.app/Icon@2x.png
+Name: RecTunnelX
+
 Package: io.github.stivengjekaj.retrotube
 Version: 1.0.0
 Architecture: iphoneos-arm
