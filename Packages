@@ -185,6 +185,23 @@ Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
 Icon: file:///Applications/Groovelet.app/Icon@2x.png
 Name: Groovelet
 
+Package: io.github.stivengjekaj.groovelet
+Version: 1.0.2
+Architecture: iphoneos-arm
+Maintainer: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Depends: firmware (>= 6.0)
+Filename: debs/io.github.stivengjekaj.groovelet_1.0.2_iphoneos-arm.deb
+Size: 1544496
+MD5sum: 1138d0a2c6b17ba51139069e46afc90d
+SHA1: 7bbc7f1f45b2829f3744f4216f9745669e7706e1
+SHA256: c167d57b77a2f686a3f0bec4b24e6a891d22c178a408dce2de71a75a3e67226b
+Section: Multimedia
+Homepage: https://github.com/Stiven-Gjekaj/Groovelet
+Description: A light music player for iOS 6. It plays MP3, AAC, ALAC, FLAC, Opus, and more from the phone.
+Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Icon: file:///Applications/Groovelet.app/Icon@2x.png
+Name: Groovelet
+
 Package: io.github.stivengjekaj.retrotube
 Version: 1.0.0
 Architecture: iphoneos-arm
