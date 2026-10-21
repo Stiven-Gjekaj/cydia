@@ -64,7 +64,8 @@ signature.
 
 ## The website
 
-The website is in `site/`. It uses Astro, Tailwind CSS, and daisyUI.
+The website is in `site/`. It uses Astro and the Karla font, in the same style as the
+sidestore-source site.
 It reads `Packages` and the `.deb` files when it builds, so you do not
 edit it when you add a package.
 
