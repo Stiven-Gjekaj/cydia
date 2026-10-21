@@ -112,3 +112,9 @@ export function formatSize(bytes: number): string {
   if (bytes >= 1024 * 1024) return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
   return `${Math.round(bytes / 1024)} KB`;
 }
+
+// Return the first sentence of a description, for a short line on a card.
+export function summary(description: string): string {
+  const m = /^.*?[.!?](?=\s|$)/s.exec(description.trim());
+  return (m ? m[0] : description).trim();
+}

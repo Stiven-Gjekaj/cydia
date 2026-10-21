@@ -5,6 +5,7 @@ import {
   groupPackages,
   minIOS,
   parseStanzas,
+  summary,
 } from "./packages";
 
 const text = [
@@ -83,5 +84,19 @@ describe("minIOS and formatSize", () => {
   it("gives KB and MB", () => {
     expect(formatSize(2048)).toBe("2 KB");
     expect(formatSize(3145728)).toBe("3.0 MB");
+  });
+});
+
+describe("summary", () => {
+  it("gives the first sentence", () => {
+    expect(summary("A demake of Balatro for iOS 6. It needs a file.")).toBe("A demake of Balatro for iOS 6.");
+  });
+
+  it("does not stop at a dot inside a word", () => {
+    expect(summary("It needs Balatro.love to run. More.")).toBe("It needs Balatro.love to run.");
+  });
+
+  it("gives all the text when it has no full stop", () => {
+    expect(summary("A player")).toBe("A player");
   });
 });
