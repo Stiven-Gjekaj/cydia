@@ -9,10 +9,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.4.0",
-    "daisyui": "^5.7.50",
-    "tailwindcss": "^4.3.3"
+    "astro": "^7.4.0"
   },
   "devDependencies": {
     "vitest": "^5.0.5"

@@ -1,86 +1,85 @@
 ---
-import CopyField from "../components/CopyField.astro";
-import Ios6Note from "../components/Ios6Note.astro";
-import PackageCard from "../components/PackageCard.astro";
 import Layout from "../layouts/Layout.astro";
-import { ADD_URL, SOURCE_URL, loadPackages } from "../lib/repo";
+import { formatSize, summary } from "../lib/packages";
+import { ADD_LINKS, SOURCE_URL, loadPackages, packageIcon } from "../lib/repo";
 import { url } from "../lib/url";
 
 const packages = loadPackages();
-const versionCount = packages.reduce((n, p) => n + p.versions.length, 0);
 ---
 
-<Layout title="Stiven Gjekaj Cydia Repository">
-  <section class="hero py-12 sm:py-16">
-    <div class="hero-content flex-col text-center">
-      <img src={url("CydiaIcon.png")} width="88" height="88" alt="" class="rounded-[22%] shadow-lg" />
-      <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">Apps for old iPhones</h1>
-      <p class="max-w-xl text-lg text-base-content/75">
-        Native apps and demakes for jailbroken iOS 6 and later. They need no account and no server.
-      </p>
-      <div class="stats stats-horizontal mt-2 border border-base-300 bg-base-100 shadow-sm">
-        <div class="stat px-5 py-3">
-          <div class="stat-title">Apps</div>
-          <div class="stat-value text-2xl">{packages.length}</div>
-        </div>
-        <div class="stat px-5 py-3">
-          <div class="stat-title">Versions</div>
-          <div class="stat-value text-2xl">{versionCount}</div>
-        </div>
-        <div class="stat px-5 py-3">
-          <div class="stat-title">Needs</div>
-          <div class="stat-value text-2xl">iOS 6</div>
-        </div>
-      </div>
-      <div class="mt-4 flex flex-wrap justify-center gap-2">
-        <a href={ADD_URL} class="btn btn-primary btn-lg">Add to Cydia</a>
-        <a href="#packages" class="btn btn-outline btn-lg">See the apps</a>
-      </div>
+<Layout title="Stiven Gjekaj Cydia">
+  <h1>Jailbreak apps for old iPhones</h1>
+  <p class="lead">
+    Native apps and demakes for iOS 6 and later. Add the source one time, and each app gets its updates from it.
+  </p>
+
+  <section id="add" class="box">
+    <div class="url-row">
+      <code class="url" id="source-url">{SOURCE_URL}</code>
+      <button class="button" id="copy" type="button">Copy</button>
+    </div>
+    <div class="buttons">
+      <a class="button primary" href={ADD_LINKS.cydia}>Add to Cydia</a>
+      <a class="button" href={ADD_LINKS.sileo}>Add to Sileo</a>
+      <a class="button" href={ADD_LINKS.zebra}>Add to Zebra</a>
     </div>
   </section>
 
-  <section id="packages" class="scroll-mt-20">
-    <h2 class="mb-4 text-2xl font-bold">Packages</h2>
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {packages.map((pkg) => <PackageCard pkg={pkg} />)}
-    </div>
-  </section>
+  <h2 id="apps">Apps</h2>
+  <div class="apps">
+    {
+      packages.map((pkg) => {
+        const newest = pkg.versions[0];
+        return (
+          <a class="box app-card" href={url(`apps/${pkg.id}/`)}>
+            {packageIcon(pkg) && <img src={url(`icons/${pkg.id}.png`)} alt="" />}
+            <div>
+              <h3>{pkg.name}</h3>
+              <p class="muted">{summary(pkg.description)}</p>
+              <p class="muted">
+                Version {newest.version}, {formatSize(newest.size)}
+              </p>
+            </div>
+          </a>
+        );
+      })
+    }
+  </div>
 
-  <section id="install" class="mt-16 scroll-mt-20">
-    <h2 class="mb-4 text-2xl font-bold">Install</h2>
-    <div class="grid gap-4 lg:grid-cols-2">
-      <div class="card min-w-0 border border-base-300 bg-base-100">
-        <div class="card-body">
-          <h3 class="card-title">iOS 7 and later</h3>
-          <ul class="steps steps-vertical">
-            <li class="step step-primary"><span class="text-left">Open Cydia, Sileo, or Zebra.</span></li>
-            <li class="step step-primary"><span class="text-left">Tap Sources, then Edit, then Add.</span></li>
-            <li class="step step-primary"><span class="text-left">Type the source below and tap Add Source.</span></li>
-          </ul>
-          <CopyField text={SOURCE_URL} label="Source URL" />
-          <p class="mt-2 text-sm text-base-content/70">
-            With APT, put this line in a file in <code>/etc/apt/sources.list.d/</code>:
-          </p>
-          <div class="mockup-code min-w-0 overflow-x-auto text-sm">
-            <pre data-prefix="$"><code>echo "deb {SOURCE_URL} ./" &gt; cydia.list</code></pre>
-          </div>
-        </div>
-      </div>
-      <div class="card min-w-0 border border-base-300 bg-base-100">
-        <div class="card-body">
-          <h3 class="card-title">iOS 6</h3>
-          <Ios6Note />
-          <ul class="steps steps-vertical">
-            <li class="step step-secondary"><span class="text-left">Download the <code>.deb</code> of the app.</span></li>
-            <li class="step step-secondary"><span class="text-left">Copy it to the phone, for example with SSH.</span></li>
-            <li class="step step-secondary"><span class="text-left">Install it as root, then respring.</span></li>
-          </ul>
-          <div class="mockup-code min-w-0 overflow-x-auto text-sm">
-            <pre data-prefix="#"><code>dpkg -i app.deb</code></pre>
-            <pre data-prefix="#"><code>su mobile -c uicache</code></pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <h2>How to add the source</h2>
+  <ol class="steps">
+    <li>Open Cydia, Sileo, or Zebra on a jailbroken iPhone or iPad with iOS 7 or later.</li>
+    <li>Tap "Add to Cydia", "Add to Sileo", or "Add to Zebra" above on the device. Or open Sources, tap Edit, then Add, and paste the address.</li>
+    <li>Open the source, choose an app, and tap Install.</li>
+  </ol>
+  <p class="muted">With APT, put this line in a file in <code>/etc/apt/sources.list.d/</code>:</p>
+  <pre class="box"><code>deb {SOURCE_URL} ./</code></pre>
+
+  <h2>On iOS 6</h2>
+  <div class="box note">
+    <strong>Cydia on iOS 6 cannot read this source.</strong>
+    <span class="muted">
+      GitHub Pages accepts only TLS 1.2, and the APT of iOS 6 stops at TLS 1.0.
+      Install each app from its <code>.deb</code> file instead.
+    </span>
+  </div>
+  <ol class="steps">
+    <li>Open the page of the app and download the <code>.deb</code> file.</li>
+    <li>Copy the file to the device, for example with SSH.</li>
+    <li>As root, run <code>dpkg -i</code> with the file, then run <code>su mobile -c uicache</code>.</li>
+  </ol>
+
+  <script>
+    const button = document.getElementById("copy");
+    const text = document.getElementById("source-url")?.textContent ?? "";
+    button?.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(text);
+        button.textContent = "Copied";
+      } catch {
+        button.textContent = "Select and copy";
+      }
+      setTimeout(() => (button.textContent = "Copy"), 2000);
+    });
+  </script>
 </Layout>
