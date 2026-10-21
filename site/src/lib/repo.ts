@@ -8,7 +8,12 @@ import { groupPackages, parseStanzas, type Package } from "./packages";
 export const repoRoot = resolve(process.env.REPO_ROOT ?? resolve(process.cwd(), ".."));
 
 export const SOURCE_URL = "https://stiven-gjekaj.github.io/cydia/";
-export const ADD_URL = `cydia://url/https://cydia.saurik.com/api/share#?source=${SOURCE_URL}`;
+// The links that open the source in each package manager.
+export const ADD_LINKS = {
+  cydia: `cydia://url/https://cydia.saurik.com/api/share#?source=${SOURCE_URL}`,
+  sileo: `sileo://source/${SOURCE_URL}`,
+  zebra: `zbra://sources/add/${SOURCE_URL}`,
+};
 export const GITHUB_URL = "https://github.com/Stiven-Gjekaj/cydia";
 
 let cache: Package[] | null = null;
