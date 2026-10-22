@@ -1,11 +1,11 @@
-Origin: Stiven Gjekaj
-Label: Stiven Gjekaj
+Origin: Stiven
+Label: Stiven
 Suite: stable
 Version: 1.0
 Codename: ios
 Architectures: iphoneos-arm
 Components: main
-Description: Apps for old iPhones, by Stiven Gjekaj.
+Description: Apps for old iPhones, by Stiven.
 MD5Sum:
  ec87fa8a450fad6daa18257d5e4aefb3 32140 Packages
  5b859fabd09f10072a482953cce7626d 5323 Packages.bz2

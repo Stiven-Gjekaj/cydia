@@ -17,14 +17,14 @@ bzip2 -kf9 Packages
 gzip -kf9n Packages
 
 {
-    echo "Origin: Stiven Gjekaj"
-    echo "Label: Stiven Gjekaj"
+    echo "Origin: Stiven"
+    echo "Label: Stiven"
     echo "Suite: stable"
     echo "Version: 1.0"
     echo "Codename: ios"
     echo "Architectures: iphoneos-arm"
     echo "Components: main"
-    echo "Description: Apps for old iPhones, by Stiven Gjekaj."
+    echo "Description: Apps for old iPhones, by Stiven."
     echo "MD5Sum:"
     for file in Packages Packages.bz2 Packages.gz; do
         echo " $(md5 -q "$file") $(wc -c < "$file" | tr -d ' ') $file"
