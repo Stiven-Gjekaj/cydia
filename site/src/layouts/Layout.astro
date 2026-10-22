@@ -8,7 +8,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Apps for old iPhones on a jailbreak, by Stiven Gjekaj." } = Astro.props;
+const { title, description = "Apps for old iPhones on a jailbreak, by Stiven." } = Astro.props;
 ---
 
 <!doctype html>
@@ -26,7 +26,7 @@ const { title, description = "Apps for old iPhones on a jailbreak, by Stiven Gje
     <div class="page">
       <header class="top">
         <img src={url("CydiaIcon.png")} alt="" />
-        <a href={url()}>Stiven Gjekaj Cydia</a>
+        <a href={url()}>Stiven's Cydia</a>
         <nav>
           <a href={url("#apps")}>Apps</a>
           <a class="wide" href={url("#add")}>Add the source</a>
