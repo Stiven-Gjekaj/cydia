@@ -70,10 +70,10 @@ export function minIOS(depends: string | undefined): string | null {
   return m ? m[1] : null;
 }
 
-// Return the name in "Name <mail>", with no mail.
-function personName(field: string | undefined): string | null {
+// Return only the first name in "First Last <mail>".
+export function firstName(field: string | undefined): string | null {
   if (!field) return null;
-  return field.replace(/\s*<[^>]*>\s*$/, "").trim() || null;
+  return field.replace(/\s*<[^>]*>\s*$/, "").trim().split(/\s+/)[0] || null;
 }
 
 export function groupPackages(stanzas: Stanza[]): Package[] {
@@ -94,7 +94,7 @@ export function groupPackages(stanzas: Stanza[]): Package[] {
       section: newest.Section ?? "",
       minIOS: minIOS(newest.Depends),
       homepage: newest.Homepage ?? null,
-      author: personName(newest.Author ?? newest.Maintainer),
+      author: firstName(newest.Author ?? newest.Maintainer),
       icon: newest.Icon ?? null,
       versions: list.map((s) => ({
         version: s.Version,

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   compareVersions,
+  firstName,
   formatSize,
   groupPackages,
   minIOS,
@@ -65,7 +66,7 @@ describe("groupPackages", () => {
     const beta = packages[1];
     expect(beta.versions.map((v) => v.version)).toEqual(["0.10.0", "0.9.0"]);
     expect(beta.minIOS).toBe("6.0");
-    expect(beta.author).toBe("Some Person");
+    expect(beta.author).toBe("Some");
     expect(beta.versions[0].size).toBe(3145728);
   });
 
@@ -98,5 +99,17 @@ describe("summary", () => {
 
   it("gives all the text when it has no full stop", () => {
     expect(summary("A player")).toBe("A player");
+  });
+});
+
+describe("firstName", () => {
+  it("gives only the first name, with no mail", () => {
+    expect(firstName("Some Person <person@example.com>")).toBe("Some");
+    expect(firstName("  Mononym  ")).toBe("Mononym");
+  });
+
+  it("gives null for no name", () => {
+    expect(firstName(undefined)).toBeNull();
+    expect(firstName("<person@example.com>")).toBeNull();
   });
 });
