@@ -1,4 +1,4 @@
-# Cydia repository of Stiven Gjekaj
+# Cydia repository of Stiven
 
 Apps for old iPhones on a jailbreak:
 [RetroTube](https://github.com/Stiven-Gjekaj/RetroTube), a YouTube client for
