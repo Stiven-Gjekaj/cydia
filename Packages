@@ -270,6 +270,23 @@ Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
 Icon: file:///Applications/Balatro4S.app/Icon@2x.png
 Name: Balatro4S
 
+Package: io.github.stivengjekaj.fernstone
+Version: 1.0.0
+Architecture: iphoneos-arm
+Maintainer: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Depends: firmware (>= 6.0)
+Filename: debs/io.github.stivengjekaj.fernstone_1.0.0_iphoneos-arm.deb
+Size: 102440
+MD5sum: 96dd9f1b5b350fdcaf62a97669014b0e
+SHA1: da40f41b782816eeb7ae87855962dc421e61ed70
+SHA256: 89d68c62a8e8ea72097c1ac7d5cbff91ebf6b90e2a4d7759540d714608f00e2a
+Section: Games
+Homepage: https://github.com/Stiven-Gjekaj/fernstone
+Description: A native Minecraft client for Alpha and Beta multiplayer, up to b1.7.3. It reads the textures from your own client jar.
+Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Icon: file:///Applications/Fernstone.app/Icon@2x.png
+Name: Fernstone
+
 Package: io.github.stivengjekaj.fortos
 Version: 0.1.0
 Architecture: iphoneos-arm
