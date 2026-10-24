@@ -287,6 +287,23 @@ Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
 Icon: file:///Applications/Fernstone.app/Icon@2x.png
 Name: Fernstone
 
+Package: io.github.stivengjekaj.fernstone
+Version: 1.1.0
+Architecture: iphoneos-arm
+Maintainer: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Depends: firmware (>= 6.0)
+Filename: debs/io.github.stivengjekaj.fernstone_1.1.0_iphoneos-arm.deb
+Size: 118542
+MD5sum: 0e4fc8514f522674900b7e297228bc17
+SHA1: 9f385f8139a70c2401ef9c5499c30d39abb7dc52
+SHA256: 2cd20518812a75eb4bd4dc1367f76c787313085852958a34be8cbb5fbf3b08aa
+Section: Games
+Homepage: https://github.com/Stiven-Gjekaj/fernstone
+Description: A native Minecraft client for Alpha and Beta multiplayer, up to b1.7.3. It reads the textures from your own client jar.
+Author: Stiven Gjekaj <stivenagostingjekaj@gmail.com>
+Icon: file:///Applications/Fernstone.app/Icon@2x.png
+Name: Fernstone
+
 Package: io.github.stivengjekaj.fortos
 Version: 0.1.0
 Architecture: iphoneos-arm
